@@ -1,0 +1,69 @@
+<?xml version="1.0" encoding="utf-8"?>
+<Project DefaultTargets="Build" ToolsVersion="4.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProductVersion>10.0.0</ProductVersion>
+    <SchemaVersion>2.0</SchemaVersion>
+    <ProjectGuid>{84D577AC-3B91-4FE8-BE8B-4EF971429463}</ProjectGuid>
+    <OutputType>Library</OutputType>
+    <RootNamespace>FinalDimensionEngine</RootNamespace>
+    <AssemblyName>FinalDimensionEngine</AssemblyName>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\Debug</OutputPath>
+    <DefineConstants>DEBUG;</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+    <ConsolePause>false</ConsolePause>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <DebugType>full</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\Release</OutputPath>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+    <ConsolePause>false</ConsolePause>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="System" />
+    <Reference Include="MonoGame.Framework, Version=3.1.2.0, Culture=neutral">
+      <Private>False</Private>
+    </Reference>
+    <Reference Include="Moq">
+      <HintPath>..\..\DevRefs\Moq.dll</HintPath>
+    </Reference>
+    <Reference Include="Ninject">
+      <HintPath>..\..\DevRefs\Ninject.dll</HintPath>
+    </Reference>
+    <Reference Include="nunit.framework, Version=2.6.0.0, Culture=neutral, PublicKeyToken=96d09a1eb7f44a77">
+      <Private>False</Private>
+    </Reference>
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="MyClass.cs" />
+    <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="Classes\GameObject.cs" />
+    <Compile Include="Classes\GameObjectAnimated.cs" />
+    <Compile Include="Classes\TextureContainer.cs" />
+    <Compile Include="Classes\TextureInfo.cs" />
+    <Compile Include="Interfaces\IAnimation.cs" />
+    <Compile Include="Interfaces\IGameKernel.cs" />
+    <Compile Include="Interfaces\IGameObject.cs" />
+    <Compile Include="Interfaces\ITextureContainer.cs" />
+    <Compile Include="Interfaces\ITextureInfo.cs" />
+    <Compile Include="Services\GameKernel.cs" />
+    <Compile Include="Services\TypeMappings.cs" />
+    <Compile Include="Tests\Testes.cs" />
+  </ItemGroup>
+  <Import Project="$(MSBuildBinPath)\Microsoft.CSharp.targets" />
+  <ItemGroup>
+    <Folder Include="Classes\" />
+    <Folder Include="Interfaces\" />
+    <Folder Include="Services\" />
+    <Folder Include="Tests\" />
+  </ItemGroup>
+</Project>
